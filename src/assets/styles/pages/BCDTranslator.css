@@ -1,0 +1,27 @@
+#bcd-translator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#bcd-translator .input-area, #bcd-translator .output-area {
+  flex: 1;
+  padding: 25px;
+  min-height: 70vh;
+}
+
+#bcd-translator .input-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: #000 solid 1px;
+}
+
+#bcd-translator .output-area {
+  border-top: #000 solid 1px;
+  border-right: #000 solid 1px;
+  border-bottom: #000 solid 1px;
+}

@@ -1,0 +1,27 @@
+#bcd-generator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#bcd-generator .input-area, #bcd-generator .output-area {
+  flex: 1;
+  padding: 25px;
+  min-height: 70vh;
+}
+
+#bcd-generator .input-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: #000 solid 1px;
+}
+
+#bcd-generator .output-area {
+  border-top: #000 solid 1px;
+  border-right: #000 solid 1px;
+  border-bottom: #000 solid 1px;
+}

@@ -1,0 +1,38 @@
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 1em;
+}
+
+#navbar .links, #navbar .title, #navbar .space {
+  flex: 1;
+}
+
+#navbar .links {
+  font-size: .9em;
+  text-align: left;
+}
+
+#navbar a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+  animation: ease 1s;
+}
+
+#navbar a:hover {
+}
+
+#navbar .active {
+  font-weight: bold;
+  padding: 10px;
+  border: #000 solid 1px;
+}
+
+#navbar .title h1 {
+  margin: 0;
+  font-weight: bold;
+}

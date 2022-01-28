@@ -1,4 +1,5 @@
-import Dashboard from "./Dashboard";
+import BCDGenerator from "./BCDGenerator";
+import BCDTranslator from "./BCDTranslator";
 import PageDoesNotExist from "./PageDoesNotExist";
 
-export { Dashboard, PageDoesNotExist };
+export { BCDGenerator, BCDTranslator, PageDoesNotExist };
