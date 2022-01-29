@@ -9,7 +9,8 @@
 #bcd-translator .input-area, #bcd-translator .output-area {
   flex: 1;
   padding: 25px;
-  min-height: 70vh;
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 #bcd-translator .input-area {
@@ -21,7 +22,23 @@
 }
 
 #bcd-translator .output-area {
+  text-align: left;
   border-top: #000 solid 1px;
   border-right: #000 solid 1px;
   border-bottom: #000 solid 1px;
+}
+
+#bcd-translator .output-area .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#bcd-translator .output-area .output {
+  font-size: 2em;
+}
+
+#bcd-translator .output-area .buttons button, #bcd-translator .output-area .buttons a {
+  margin-left: 10px;
 }

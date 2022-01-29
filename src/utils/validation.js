@@ -14,13 +14,13 @@ const isOnlyNumber = (input) => {
 
 // Checks whether the passed input contains only 0s and 1s
 const isBinary = (input) => {
-  var pattern =/[01]+/;
+  var pattern =/^[01]+$/;
   return pattern.test(input);  // returns a boolean
 }
 
-// Checks whether the passed input has exactly 10 characters
-const is10Characters = (input) => {
-  return input.length === 10
+// Checks whether input has exactly parameter length characters
+const isExactLength = (input, length) => {
+  return input.length === length;
 }
 
-export { isOnlyNumber, isNotEmpty, isBinary, is10Characters };
+export { isOnlyNumber, isNotEmpty, isBinary, isExactLength };
