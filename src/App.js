@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { BCDGenerator, BCDTranslator, PageDoesNotExist } from './pages';
+import { BCDGenerator, BCDTranslator, GroupMembers, PageDoesNotExist } from './pages';
 import { Navbar } from './components';
 
 import './assets/styles/App.css';
@@ -21,6 +21,7 @@ export default class App extends Component {
         <Navbar />
         <Router>
           <Switch>
+            <Route path='/group-members' exact component={GroupMembers} />
             <Route path='/translator' component={BCDTranslator} />
             <Route path='/' exact component={BCDGenerator} />
             <Route component={PageDoesNotExist} />

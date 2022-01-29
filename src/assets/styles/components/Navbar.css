@@ -15,19 +15,24 @@
   text-align: left;
 }
 
-#navbar a {
+#navbar .space {
+  text-align: right;
+}
+
+#navbar .links a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 20px;
   animation: ease 1s;
-}
-
-#navbar a:hover {
 }
 
 #navbar .active {
   font-weight: bold;
   padding: 10px;
   border: #000 solid 1px;
+}
+
+#navbar img {
+  height: 1.75em;
 }

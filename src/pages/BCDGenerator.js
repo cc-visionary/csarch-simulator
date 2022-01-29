@@ -11,32 +11,37 @@ const BCDGenerator = () => {
   const [input, setInput] = useState('');
   const [mode, setMode] = useState(1);
   const [error, setError] = useState('');
-  const [previousInput, setPreviousInput] = useState('');
   const [output, setOutput] = useState(null);
   const [downloadLink, setDownloadLink] = useState('');
 
   useEffect(() => {
-    if(output) makeTextFile()
+    if(output) makeTextFile();
   }, [output])
 
-  const onSubmit = () => {
+  useEffect(() => {
+    updateOutput();
+  }, [input, mode])
+
+  const updateOutput = () => {
     if(!isNotEmpty(input)) {
       setError('Input cannot be empty.')
+      setOutput(null);
       return
     } else if(!isOnlyNumber(input)) {
-      setError('Input can only digits (0-9).')
+      setError('Input can only contain digits (0-9).')
+      setOutput(null);
       return
     }
 
     if(mode === 3) {
       if(!isExactLength(input, 3)) {
         setError('Densely Packed BCD requires an input with 3 digits')
+        setOutput(null);
         return
       }
     }
 
-    setError('')
-    setPreviousInput(input)
+    setError('');
 
     switch(mode) {
       case 1:
@@ -50,17 +55,22 @@ const BCDGenerator = () => {
         break;
       default:
         console.error(`Invalid mode (${mode})`)
-        setOutput(null)
+        setOutput(null);
     }
+  }
+
+  const clear = () => {
+    setInput('');
+    setOutput(null);
   }
 
   const makeTextFile = () => {
     let outputText = ''
     
     if(typeof(output) === "string") {
-      outputText = `Input: ${previousInput}\nOutput: ${output}`
+      outputText = `Input: ${input}\nOutput: ${output}`
     } else {
-      outputText = `Input: ${previousInput}\nOutput: `
+      outputText = `Input: ${input}\nOutput: `
       for(let i = 0; i < output.length; i++) outputText += output[i] + ' ';
     }
     
@@ -78,7 +88,7 @@ const BCDGenerator = () => {
         <InputNumber 
           label='Decimal' 
           value={input} 
-          setValue={setInput} 
+          setValue={setInput}
           placeholder='Enter your Decimal' 
           error={error}
         />
@@ -88,14 +98,12 @@ const BCDGenerator = () => {
           <Radio value={2}>Packed BCD</Radio>
           <Radio value={3}>Densely Packed BCD</Radio>
         </Radio.Group>
-        <br/>
-        <Button onClick={() => onSubmit()}>Submit</Button>
       </div>
       <div className='output-area'>
         <div className='title'>
           <h1>Output:</h1>
           <div className='buttons'>
-            <Button className={output ===  null ? 'disabled' : ''} onClick={() => setOutput(null)}>Clear</Button>
+            <Button className={output ===  null && input === '' ? 'disabled' : ''} onClick={() => clear()}>Clear</Button>
             <Button className={output ===  null ? 'disabled' : ''} download='decimalToBCD.txt' href={downloadLink}>Generate Text File</Button>
           </div>
         </div>

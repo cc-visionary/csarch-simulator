@@ -15,24 +15,36 @@ const BCDTranslator = () => {
   const [downloadLink, setDownloadLink] = useState('');
 
   useEffect(() => {
-    if(output) makeTextFile()
-  }, [output])
+    if(output) makeTextFile();
+  }, [output]);
 
-  const onSubmit = () => {
+  useEffect(() => {
+    updateOutput();
+  }, [input]);
+
+  const updateOutput = () => {
     if(!isNotEmpty(input)) {
       setError('Input cannot be empty.');
+      setOutput(null);
       return;
     } else if(!isBinary(input)) {
-      setError('Input can only binary (0s or 1s).');
+      setError('Input can only contain binary digits (0s or 1s).');
+      setOutput(null);
       return;
     } else if(!isExactLength(input, 10)) {
       setError('Input has to be exactly 10 digits.');
+      setOutput(null);
       return;
     }
 
     setError('');
     setPreviousInput(input)
     setOutput(denselyPackedBCDToDecimal(input));
+  }
+
+  const clear = () => {
+    setInput('');
+    setOutput(null);
   }
 
   const makeTextFile = () => {
@@ -54,14 +66,12 @@ const BCDTranslator = () => {
           placeholder='Enter your BCD' 
           error={error}
         />
-        <br />
-        <Button onClick={() => onSubmit()}>Submit</Button>
       </div>
       <div className='output-area'>
         <div className='title'>
           <h1>Output:</h1>
           <div className='buttons'>
-            <Button className={output ===  null ? 'disabled' : ''} onClick={() => setOutput(null)}>Clear</Button>
+            <Button className={output ===  null && input === '' ? 'disabled' : ''} onClick={() => clear()}>Clear</Button>
             <Button className={output ===  null ? 'disabled' : ''} download='bcdToDecimal.txt' href={downloadLink}>Generate Text File</Button>
           </div>
         </div>
