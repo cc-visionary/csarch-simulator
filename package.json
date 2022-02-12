@@ -1,40 +1,30 @@
 {
   "name": "csarch-simulator",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.18.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.0"
-  },
+  "version": "1.0.0",
+  "description": "1. Click on `BCD Generator` located on the Navbar\r 2. Type your Decimal to the input\r 3. Make sure your input is valid, if it is invalid, an error will be shown\r 4. Feel free to select from the choices on what type of BCD to output: `Unpacked BCD`, `Packed BCD`, and `Densely Packed BCD`. \r 5. As soon as you finish typing, you should see the output below the text `Output:`\r ### To decode from Densely Packed BCD to Decimal\r 1. Click on `Densely Packed BCD Translator` located on the Navbar\r 2. Type your Densely Packed BCD to the input\r 3. Make sure your input is valid, if it is invalid, an error will be shown\r 4. As soon as you finish typing, you should see the output below the text `Output:`\r ### To generate text file for both generator and translator\r 1. Simply click on the `Generate Text File` button located on the output area\r ## Screenshots:\r ### Encoding from Decimal to BCD\r - Can choose 3 choices from Unpacked, Packed, to Densely Packed\r ![image](https://user-images.githubusercontent.com/22016684/151653910-385dc215-44a4-4377-bf64-03ca3749336f.png)\r ### Decoding from Densely Packed BCD to Decimal\r ![image](https://user-images.githubusercontent.com/22016684/151653869-552ed36f-7746-4bd3-996d-2d02d7915285.png)",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cc-visionary/csarch-simulator.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cc-visionary/csarch-simulator/issues"
+  },
+  "homepage": "https://github.com/cc-visionary/csarch-simulator#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
