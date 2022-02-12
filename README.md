@@ -16,6 +16,6 @@
 ## Screenshots:
 ### Encoding from Decimal to BCD
 - Can choose 3 choices from Unpacked, Packed, to Densely Packed
-![image](https://user-images.githubusercontent.com/22016684/151653910-385dc215-44a4-4377-bf64-03ca3749336f.png)
+![image](https://user-images.githubusercontent.com/22016684/151660202-ff8e1cec-1fd2-4aef-a9ad-0eb3c5ee75ea.png)
 ### Decoding from Densely Packed BCD to Decimal
-![image](https://user-images.githubusercontent.com/22016684/151653869-552ed36f-7746-4bd3-996d-2d02d7915285.png)
+![image](https://user-images.githubusercontent.com/22016684/151660209-d0bb98a5-b0dd-48fe-a074-f0a1db4185d0.png)
